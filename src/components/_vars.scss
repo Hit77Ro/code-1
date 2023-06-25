@@ -1,0 +1,34 @@
+@import "../mixins/mixins";
+
+:root {
+  
+
+  --fz-normal: 12px;
+  --fz-small: 11px;
+  --fz-smaller: 10px;
+
+  /* ====== FONT MEDIA QUERY ====== */
+
+  @include media(md) {
+    --fz-normal: 13px;
+    --fz-small: 12px;
+    --fz-smaller: 11px;
+  }
+
+  @include media(xl) {
+    --fz-normal: 14px;
+    --fz-small: 13px;
+    --fz-smaller: 12px;
+  }
+
+  @include media(xxl) {
+    --fz-normal: 15px;
+    --fz-small: 14px;
+    --fz-smaller: 13px;
+  }
+
+  /* ========= FONT WEIGHT ======== */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semi: 600;
+}

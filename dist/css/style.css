@@ -1,0 +1,227 @@
+:root {
+  --fz-normal: 12px;
+  --fz-small: 11px;
+  --fz-smaller: 10px;
+  /* ====== FONT MEDIA QUERY ====== */
+  /* ========= FONT WEIGHT ======== */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semi: 600;
+}
+@media only screen and (min-width: 768px) {
+  :root {
+    --fz-normal: 13px;
+    --fz-small: 12px;
+    --fz-smaller: 11px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  :root {
+    --fz-normal: 14px;
+    --fz-small: 13px;
+    --fz-smaller: 12px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  :root {
+    --fz-normal: 15px;
+    --fz-small: 14px;
+    --fz-smaller: 13px;
+  }
+}
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img,
+video,
+audio,
+span,
+label,
+select,
+button,
+input,
+select,
+textarea,
+a {
+  display: inline-block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+html {
+  outline: none;
+}
+
+body {
+  margin-top: var(--header-height);
+  background-color: var(--body-color);
+  line-height: var(--body-line-height);
+  font-weight: var(--fw-medium);
+  font-family: var(--body-font);
+  font-size: var(--fz-normal);
+  color: var(--text-color);
+  transition: 0.2s ease-in-out;
+}
+
+body.dark-theme {
+  --first-color-second: hsl(var(--hue-color), 30%, 8%);
+  --title-color: hsl(var(--hue-color), 8%, 95%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
+  --body-color: hsl(var(--hue-color), 28%, 12%);
+  --container-color: hsl(var(--hue-color), 29%, 16%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  padding-left: var(--m-4);
+  padding-right: var(--m-4);
+  width: 900px;
+  height: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1,
+h3,
+h2,
+h4,
+h5,
+h6 {
+  text-transform: capitalize;
+  color: var(--title-color);
+  font-weight: var(--fw-semi);
+}
+
+a {
+  text-transform: capitalize;
+}
+
+:root {
+  --section-font-size: var(--m-5);
+}
+@media only screen and (min-width: 768px) {
+  :root {
+    --section-font-size: var(--m-8);
+  }
+}
+
+.section {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.section__header {
+  margin-left: auto;
+  margin-right: auto;
+  width: -moz-max-content;
+  width: max-content;
+  margin-bottom: var(--m-8);
+  text-align: center;
+}
+.section__title {
+  position: relative;
+  font-size: var(--section-font-size);
+}
+.section__subtitle {
+  color: var(--first-color);
+  font-size: var(--fz-normal);
+}
+
+/* ============= BUTTONS ============ */
+.btn {
+  transition: all 0.15s ease-in;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-transform: capitalize;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.2rem;
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--scroll-thumb-color);
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+:root {
+  --shadow: 4px 4px 10px rgba(59, 59, 59, 0.8);
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  border-radius: 3px;
+  background-color: red;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+}
+div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+div:hover::after {
+  opacity: 1;
+}

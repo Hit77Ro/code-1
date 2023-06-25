@@ -1,0 +1,15 @@
+
+@mixin shadow($shadow , $position : relative)  { 
+    position: if($position == i,null ,$position );
+    &::after{ 
+
+        @include pseudo; 
+        @include box(100%) ; 
+        box-shadow:  $shadow;
+        opacity: 0;
+        transition: opacity 1s ease-in;
+    }
+    &:hover::after { 
+        opacity: 1;
+    }
+}
